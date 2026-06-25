@@ -13,9 +13,9 @@
     "index.d.ts"
   ],
   "scripts": {
-    "test": "mocha --reporter spec --recursive --colors *.test.js",
-    "code:fix": "prettier --write --list-different '**/*.{ts,js,json}'",
-    "code:check": "prettier  --list-different '**/*.{ts,js,json}'",
+    "test": "mocha --reporter spec --recursive --colors *.test.mjs",
+    "code:fix": "prettier --write --list-different '**/*.{ts,js,mjs,json}'",
+    "code:check": "prettier  --list-different '**/*.{ts,js,mjs,json}'",
     "type:check": "tsd"
   },
   "keywords": [
@@ -41,7 +41,7 @@
   "devDependencies": {
     "@types/chai": "^4.3.4",
     "chai": "^4.3.7",
-    "mocha": "^10.2.0",
+    "mocha": "^11.7.6",
     "prettier": "^3.2.5",
     "tsd": "^0.25.0"
   },

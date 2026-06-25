@@ -1,6 +1,6 @@
-const { expect } = require("chai");
+import { expect } from "chai";
 
-const { deepCloneIgnoreUndefined, deepClone } = require("./deep-clone");
+import { deepCloneIgnoreUndefined, deepClone } from "./deep-clone.js";
 
 describe("deepClone", () => {
   it("should clone an object", () => {

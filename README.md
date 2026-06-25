@@ -31,9 +31,15 @@ npm install chai-deep-equal-ignore-undefined --save-dev
 yarn add chai-deep-equal-ignore-undefined --dev
 ```
 
+## Compatibility
+
+This plugin supports **chai 4, 5 and 6** (`chai >= 4.0.0 < 7`).
+
+Note that chai is **ESM-only from version 5 onwards**, so when using chai 5 or 6 you must load chai (and this plugin) with `import` — the CommonJS `require("chai")` example below only works on chai 4.
+
 ## Usage
 
-### Require
+### Require (chai 4 only)
 
 ```js
 const chai = require("chai");
@@ -45,7 +51,16 @@ chai.use(chaiDeepEqualIgnoreUndefined);
 ### ES6 Import
 
 ```js
+// chai 4 (default import)
 import chai from "chai";
+import chaiDeepEqualIgnoreUndefined from "chai-deep-equal-ignore-undefined";
+
+chai.use(chaiDeepEqualIgnoreUndefined);
+```
+
+```js
+// chai 5 / 6 (namespace import — chai has no default export)
+import * as chai from "chai";
 import chaiDeepEqualIgnoreUndefined from "chai-deep-equal-ignore-undefined";
 
 chai.use(chaiDeepEqualIgnoreUndefined);
@@ -79,7 +94,7 @@ expect({ aa: undefined, bb: "b" }).to.deepEqualIgnoreUndefined({
 // Assert API
 assert.deepEqualIgnoreUndefined(
   { a: undefined, b: "b" },
-  { b: "b", c: undefined }
+  { b: "b", c: undefined },
 );
 ```
 
@@ -106,7 +121,7 @@ expect({
 // Assert API
 assert.deepEqualIgnoreUndefined(
   { a: { b: undefined, c: "c" } },
-  { a: { c: "c", d: undefined } }
+  { a: { c: "c", d: undefined } },
 );
 ```
 

@@ -1,10 +1,8 @@
 /* eslint-env mocha */
 
-const { use, assert, expect } = require("chai");
+import { use, assert, expect } from "chai";
 
-const {
-  default: chaiDeepEqualIgnoreUndefined,
-} = require("./chai-deep-equal-ignore-undefined");
+import chaiDeepEqualIgnoreUndefined from "./chai-deep-equal-ignore-undefined.js";
 
 // Use the new plugin
 use(chaiDeepEqualIgnoreUndefined);
